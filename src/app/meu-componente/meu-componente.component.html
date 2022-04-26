@@ -1,0 +1,34 @@
+<div class="mt-4">
+<div *ngIf="this.exibirTexto" class="alert alert-primary" role="alert">
+    Faculdade REGES!
+</div>
+<div *ngIf="!this.exibirTexto" class="alert alert-secondary" role="alert">
+    Tópicos Avançados em Programação!
+</div>
+
+<button type="button" (click)="mostrarOcultar()" class="btn btn-primary">{{this.textoBotao}}</button>
+</div>
+
+<br/>
+<p>Exemplo de NgFor</p>
+
+<button type="button" (click)="exibirTabela()" class="btn btn-primary">{{this.textoBotao2}}</button>
+
+<table class="table table-striped" *ngIf="this.esconderTabela">
+    <thead>
+        <tr>
+            <!-- <th scope="col">#</th> -->
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Universo</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let item of herois">
+            <!-- <th scope="row"></th> -->
+            <td>{{item.id}}</td>
+            <td>{{item.nome}}</td>
+            <td>{{item.universo}}</td>
+        </tr>
+    </tbody>
+</table>
